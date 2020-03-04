@@ -17,7 +17,7 @@
  $devices_array=array();
  // build filter
  $filter=new strFilter();
- $filter->addSearch(["name","description","identifier"]);
+ $filter->addSearch(["name","description","brand","model","identifier"]);
  // build query object
  $query=new cQuery("devices__devices",$filter->getQueryWhere());
  $query->addQueryOrderField("name");
@@ -28,7 +28,6 @@
  // build table
  $table=new strTable(api_text("devices_list-tr-unvalued"));
  $table->addHeader($filter->link(api_icon("fa-filter",api_text("filters-modal-link"),"hidden-link")),"text-center",16);
- $table->addHeader(api_text("cDevicesDevice-property-code"),"nowrap");
  $table->addHeader("&nbsp;",null,16);
  $table->addHeader(api_text("cDevicesDevice-property-name"),null,"100%");
  $table->addHeader("&nbsp;",null,16);
@@ -46,7 +45,6 @@
   // make devices row
   $table->addRow(implode(" ",$tr_class_array));
   $table->addRowFieldAction(api_url(["scr"=>"devices_view","idDevice"=>$device_fobj->id]),"fa-search",api_text("table-td-view"));
-  $table->addRowField(api_tag("samp",$device_fobj->code),"nowrap");
   $table->addRowField($device_fobj->getCategory()->getIcon(),"nowrap");
   $table->addRowField($device_fobj->name,"truncate-ellipsis");
   $table->addRowField($ob->render(),"nowrap text-right");
