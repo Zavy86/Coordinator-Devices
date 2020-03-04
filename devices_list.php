@@ -28,9 +28,9 @@
  // build table
  $table=new strTable(api_text("devices_list-tr-unvalued"));
  $table->addHeader($filter->link(api_icon("fa-filter",api_text("filters-modal-link"),"hidden-link")),"text-center",16);
- $table->addHeader(api_text("cDevicesDevice-property-name"),"nowrap");
- $table->addHeader(api_text("cDevicesDevice-property-description"),null,"100%");
- $table->addHeader(api_text("cDevicesDevice-property-identifier"),"nowrap text-right");
+ $table->addHeader(api_text("cDevicesDevice-property-code"),"nowrap");
+ $table->addHeader("&nbsp;",null,16);
+ $table->addHeader(api_text("cDevicesDevice-property-name"),null,"100%");
  $table->addHeader("&nbsp;",null,16);
  // cycle all devices
  foreach($devices_array as $device_fobj){
@@ -46,9 +46,9 @@
   // make devices row
   $table->addRow(implode(" ",$tr_class_array));
   $table->addRowFieldAction(api_url(["scr"=>"devices_view","idDevice"=>$device_fobj->id]),"fa-search",api_text("table-td-view"));
-  $table->addRowField($device_fobj->name,"nowrap");
-  $table->addRowField($device_fobj->description,"truncate-ellipsis");
-  $table->addRowField(api_tag("samp",$device_fobj->identifier),"nowrap text-right");
+  $table->addRowField(api_tag("samp",$device_fobj->code),"nowrap");
+  $table->addRowField($device_fobj->getCategory()->getIcon(),"nowrap");
+  $table->addRowField($device_fobj->name,"truncate-ellipsis");
   $table->addRowField($ob->render(),"nowrap text-right");
  }
  // build grid object

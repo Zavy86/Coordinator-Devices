@@ -21,8 +21,8 @@
  if(!defined(TAB)){define("TAB","informations");}
  // build devices description list
  $left_dl=new strDescriptionList("br","dl-horizontal");
- $left_dl->addElement(api_text("cDevicesDevice-property-code"),api_tag("samp",$device_obj->code));
  $left_dl->addElement(api_text("cDevicesDevice-property-name"),api_tag("strong",$device_obj->name));
+ $left_dl->addElement(api_text("cDevicesDevice-property-fkCategory"),$device_obj->getCategory()->getLabel(false,true));
  // build right description list
  $right_dl=new strDescriptionList("br","dl-horizontal");
  if($device_obj->description){$right_dl->addElement(api_text("cDevicesDevice-property-description"),nl2br($device_obj->description));}
