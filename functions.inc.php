@@ -8,6 +8,7 @@
  */
 
  // include classes
+ require_once(DIR."modules/devices/classes/cDevicesCategory.class.php");
  require_once(DIR."modules/devices/classes/cDevicesDevice.class.php");
 
 ?>

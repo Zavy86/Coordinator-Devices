@@ -14,21 +14,39 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `devices__categories`
+--
+
+CREATE TABLE IF NOT EXISTS `devices__categories` (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `icon` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `devices__devices`
 --
 
 CREATE TABLE IF NOT EXISTS `devices__devices` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `code` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `fkCategory` int(11) UNSIGNED NOT NULL,
   `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci,
-  `identifier` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `brand` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `model` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `identifier` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `price` double UNSIGNED DEFAULT NULL,
   `purchase` date DEFAULT NULL,
   `warranty` date DEFAULT NULL,
-  `note` text COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fkCategory` (`fkCategory`),
+  CONSTRAINT `devices__devices_ibfk_1` FOREIGN KEY (`fkCategory`) REFERENCES `devices__categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
