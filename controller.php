@@ -19,6 +19,49 @@
  }
 
  /**
+  * Category controller
+  *
+  * @param string $action Object action
+  */
+ function cDevicesCategory_controller($action){
+  // check authorizations
+  api_checkAuthorization("device-manage","dashboard");
+  // get object
+  $category_obj=new cDevicesCategory($_REQUEST['idCategory']);
+  api_dump($category_obj,"category object");
+  // check object
+  if($action!="store" && !$category_obj->id){api_alerts_add(api_text("cDevicesCategory-alert-exists"),"danger");api_redirect("?mod=".MODULE."&scr=categories_list");}
+  // execution
+  try{
+   switch($action){
+    case "store":
+     $category_obj->store($_REQUEST);
+     api_alerts_add(api_text("cDevicesCategory-alert-stored"),"success");
+     break;
+    case "delete":
+     $category_obj->delete();
+     api_alerts_add(api_text("cDevicesCategory-alert-deleted"),"warning");
+     break;
+    case "undelete":
+     $category_obj->undelete();
+     api_alerts_add(api_text("cDevicesCategory-alert-undeleted"),"warning");
+     break;
+    case "remove":
+     $category_obj->remove();
+     api_alerts_add(api_text("cDevicesCategory-alert-removed"),"warning");
+     break;
+    default:
+     throw new Exception("Category action \"".$action."\" was not defined..");
+   }
+   // redirect
+   api_redirect(api_return_url(["scr"=>"categories_list","idCategory"=>$category_obj->id]));
+  }catch(Exception $e){
+   // dump, alert and redirect
+   api_redirect_exception($e,api_url(["scr"=>"categories_list","idCategory"=>$category_obj->id]),"cDevicesCategory-alert-error");
+  }
+ }
+
+ /**
   * Device controller
   *
   * @param string $action Object action
