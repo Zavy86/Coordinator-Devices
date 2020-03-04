@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-->
+ ! Devices - Default localization
+ !
+ ! @package Coordinator\Modules\Devices
+ ! @author  Manuel Zavatta <manuel.zavatta@gmail.com>
+ ! @link    http://www.coordinator.it
+<!-->
+<locale>
+
+ <!-- module -->
+ <text key="devices">Dispositivi</text>
+ <text key="devices-description">Gestione Dispositivi</text>
+
+ <!-- authorizations -->
+ <text key="devices-manage">Gestione</text>
+ <text key="devices-manage-description">Gestione modulo dispositivi</text>
+ <text key="devices-usage">Abilitazione</text>
+ <text key="devices-usage-description">Utilizzo del modulo dispositivi</text>
+
+ <!-- cDevicesDevice -->
+ <text key="cDevicesDevice">Dispositivo</text>
+ <text key="cDevicesDevice-event-created">Creazione</text>
+ <text key="cDevicesDevice-event-updated">Aggiornamento</text>
+ <text key="cDevicesDevice-event-deleted">Eliminazione</text>
+ <text key="cDevicesDevice-event-undeleted">Ripristino</text>
+ <text key="cDevicesDevice-event-removed">Rimozione</text>
+ <text key="cDevicesDevice-event-joined_added">Collegamento</text>
+ <text key="cDevicesDevice-event-joined_removed">Scollegamento</text>
+ <text key="cDevicesDevice-alert-error">Si è verificato un errore durante il salvataggio del dispositivo</text>
+ <text key="cDevicesDevice-alert-exists">Il dispositivo non è stato trovato</text>
+ <text key="cDevicesDevice-alert-stored">Il dispositivo è stato salvato</text>
+ <text key="cDevicesDevice-alert-deleted">Il dispositivo è stato eliminato</text>
+ <text key="cDevicesDevice-alert-undeleted">Il dispositivo è stato ripristinato</text>
+ <text key="cDevicesDevice-alert-removed">Il dispositivo è stato rimosso</text>
+ <text key="cDevicesDevice-confirm-delete">Confermi di voler eliminare questo dispositivo?</text>
+ <text key="cDevicesDevice-confirm-undelete">Confermi di voler ripristinare questo dispositivo?</text>
+ <text key="cDevicesDevice-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questo dispositivo dal database?</text>
+ <text key="cDevicesDevice-warning-deleted">Attenzione, questo dispositivo risulta eliminato!</text>
+ <text key="cDevicesDevice-property-code">Codice</text>
+ <text key="cDevicesDevice-property-name">Dispositivo</text>
+ <text key="cDevicesDevice-property-description">Descrizione</text>
+ <text key="cDevicesDevice-property-identifier">Identificativo</text>
+ <text key="cDevicesDevice-property-price">Prezzo</text>
+ <text key="cDevicesDevice-property-purchase">Data di acquisto</text>
+ <text key="cDevicesDevice-property-warranty">Scadenza garanzia</text>
+ <text key="cDevicesDevice-property-note">Note</text>
+ <text key="cDevicesDevice-placeholder-code">Codice di inventario</text>
+ <text key="cDevicesDevice-placeholder-name">Nome del dispositivo comprensivo di marca e modello</text>
+ <text key="cDevicesDevice-placeholder-description">Eventuale descrizione del dispositivo</text>
+ <text key="cDevicesDevice-placeholder-identifier">Codice identificativo o numero di serie del dispositivo</text>
+ <text key="cDevicesDevice-placeholder-price">Prezzo di acquisto</text>
+ <text key="cDevicesDevice-placeholder-note">Inserisci eventuali note aggiuntive</text>
+
+ <!-- navigation -->
+ <text key="nav-devices-list">Dispositivi</text>
+ <text key="nav-devices-add">Aggiungi dispositivo</text>
+ <text key="nav-devices-operations-edit">Modifica dispositivo</text>
+ <text key="nav-devices-operations-document_add">Aggiungi documento</text>
+
+ <!-- devices_list -->
+ <text key="devices_list">Dispositivi</text>
+ <text key="devices_list-tr-unvalued">Non sono presenti dispositivi da mostrare..</text>
+
+ <!-- devices_view -->
+ <text key="devices_view">Dispositivo: <![CDATA[{0}]]></text>
+ <text key="devices_view-tab-informations">Informazioni</text>
+ <text key="devices_view-tab-documents">Documenti</text>
+ <text key="devices_view-tab-logs">Eventi</text>
+ <text key="devices_view-documents-tr-unvalued">Non sono presenti documenti da mostrare..</text>
+ <text key="devices_view-documents-modal-title-add">Aggiungi documento al dispositivo <![CDATA[{0}]]></text>
+
+ <!-- devices_edit -->
+ <text key="devices_edit">Modifica: <![CDATA[{0}]]></text>
+ <text key="devices_edit-add">Aggiungi dispositivo</text>
+
+</locale>
