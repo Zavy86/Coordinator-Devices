@@ -18,6 +18,24 @@
  <text key="devices-usage">Abilitazione</text>
  <text key="devices-usage-description">Utilizzo del modulo dispositivi</text>
 
+ <!-- cDevicesCategory -->
+ <text key="cDevicesCategory">Categoria</text>
+ <text key="cDevicesCategory-alert-error">Si è verificato un errore durante il salvataggio della categoria</text>
+ <text key="cDevicesCategory-alert-exists">La categoria non è stata trovata</text>
+ <text key="cDevicesCategory-alert-stored">La categoria è stata salvata</text>
+ <text key="cDevicesCategory-alert-deleted">La categoria è stata eliminata</text>
+ <text key="cDevicesCategory-alert-undeleted">La categoria è stata ripristinata</text>
+ <text key="cDevicesCategory-alert-removed">La categoria è stata rimossa</text>
+ <text key="cDevicesCategory-confirm-delete">Confermi di voler eliminare questa categoria?</text>
+ <text key="cDevicesCategory-confirm-undelete">Confermi di voler ripristinare questa categoria?</text>
+ <text key="cDevicesCategory-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questa categoria dal database?</text>
+ <text key="cDevicesCategory-warning-deleted">Attenzione, questa categoria risulta eliminata!</text>
+ <text key="cDevicesCategory-property-name">Categoria</text>
+ <text key="cDevicesCategory-property-title">Descrizione</text>  <!-- trovare etichetta per title -->
+ <text key="cDevicesCategory-property-icon">Icona</text>
+ <text key="cDevicesCategory-placeholder-name">Nome della categoria</text>
+ <text key="cDevicesCategory-placeholder-title">Descrizione della categoria</text>
+
  <!-- cDevicesDevice -->
  <text key="cDevicesDevice">Dispositivo</text>
  <text key="cDevicesDevice-event-created">Creazione</text>
@@ -37,22 +55,27 @@
  <text key="cDevicesDevice-confirm-undelete">Confermi di voler ripristinare questo dispositivo?</text>
  <text key="cDevicesDevice-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questo dispositivo dal database?</text>
  <text key="cDevicesDevice-warning-deleted">Attenzione, questo dispositivo risulta eliminato!</text>
- <text key="cDevicesDevice-property-code">Codice</text>
+ <text key="cDevicesDevice-property-fkCategory">Categoria</text>
  <text key="cDevicesDevice-property-name">Dispositivo</text>
  <text key="cDevicesDevice-property-description">Descrizione</text>
+ <text key="cDevicesDevice-property-brand">Marca</text>
+ <text key="cDevicesDevice-property-model">Modello</text>
  <text key="cDevicesDevice-property-identifier">Identificativo</text>
  <text key="cDevicesDevice-property-price">Prezzo</text>
  <text key="cDevicesDevice-property-purchase">Data di acquisto</text>
  <text key="cDevicesDevice-property-warranty">Scadenza garanzia</text>
  <text key="cDevicesDevice-property-note">Note</text>
- <text key="cDevicesDevice-placeholder-code">Codice di inventario</text>
+ <text key="cDevicesDevice-placeholder-fkCategory">Seleziona una categoria..</text>
  <text key="cDevicesDevice-placeholder-name">Nome del dispositivo comprensivo di marca e modello</text>
  <text key="cDevicesDevice-placeholder-description">Eventuale descrizione del dispositivo</text>
+ <text key="cDevicesDevice-placeholder-brand">Nome del produttore</text>
+ <text key="cDevicesDevice-placeholder-model">Modello di dispositivo</text>
  <text key="cDevicesDevice-placeholder-identifier">Codice identificativo o numero di serie del dispositivo</text>
  <text key="cDevicesDevice-placeholder-price">Prezzo di acquisto</text>
  <text key="cDevicesDevice-placeholder-note">Inserisci eventuali note aggiuntive</text>
 
  <!-- navigation -->
+ <text key="nav-settings-categories">Categorie</text>
  <text key="nav-devices-list">Dispositivi</text>
  <text key="nav-devices-add">Aggiungi dispositivo</text>
  <text key="nav-devices-operations-edit">Modifica dispositivo</text>
