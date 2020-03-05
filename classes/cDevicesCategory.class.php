@@ -24,6 +24,20 @@
   protected $icon;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->name))){throw new Exception("Category name is mandatory..");}
+   if(!strlen(trim($this->icon))){throw new Exception("Category icon is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Get Label
    *
    * @param boolean $icon Show icon
@@ -55,20 +69,6 @@
    * @return objects[] Devices array
    */
   public function getDevices(){return cDevicesDevice::availables(true,["fkCategory"=>$this->id]);}
-
-  /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->name))){throw new Exception("Category name is mandatory..");}
-   if(!strlen(trim($this->icon))){throw new Exception("Category icon is mandatory..");}
-   // return
-   return true;
-  }
 
   /**
    * Edit form
