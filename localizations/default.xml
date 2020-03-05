@@ -38,13 +38,6 @@
 
  <!-- cDevicesDevice -->
  <text key="cDevicesDevice">Dispositivo</text>
- <text key="cDevicesDevice-event-created">Creazione</text>
- <text key="cDevicesDevice-event-updated">Aggiornamento</text>
- <text key="cDevicesDevice-event-deleted">Eliminazione</text>
- <text key="cDevicesDevice-event-undeleted">Ripristino</text>
- <text key="cDevicesDevice-event-removed">Rimozione</text>
- <text key="cDevicesDevice-event-joined_added">Collegamento</text>
- <text key="cDevicesDevice-event-joined_removed">Scollegamento</text>
  <text key="cDevicesDevice-alert-error">Si è verificato un errore durante il salvataggio del dispositivo</text>
  <text key="cDevicesDevice-alert-exists">Il dispositivo non è stato trovato</text>
  <text key="cDevicesDevice-alert-stored">Il dispositivo è stato salvato</text>
