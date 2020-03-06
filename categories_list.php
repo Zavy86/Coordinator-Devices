@@ -24,7 +24,7 @@
   // build operation button
   $ob=new strOperationsButton();
   $ob->addElement(api_url(["scr"=>"categories_list","act"=>"category_edit","idCategory"=>$category_fobj->id]),"fa-pencil",api_text("table-td-edit"),(api_checkAuthorization("devices-manage")));
-  $ob->addElement(api_url(["scr"=>"controller","act"=>"remove","obj"=>"cDevicesCategory","idCategory"=>$category_fobj->id,"return"=>["scr"=>"categories_list"]]),"fa-trash",api_text("table-td-remove"),(api_checkAuthorization("devices-manage")),api_text("cDevicesCategory-confirm-remove"));
+  $ob->addElement(api_url(["scr"=>"controller","act"=>"remove","obj"=>"cDevicesCategory","idCategory"=>$category_fobj->id,"return"=>["scr"=>"categories_list"]]),"fa-trash",api_text("table-td-remove"),(api_checkAuthorization("devices-manage") && !count($category_fobj->getDevices())),api_text("cDevicesCategory-confirm-remove"));
   // make table row class
   $tr_class_array=array();
   if($category_fobj->id==$_REQUEST['idCategory']){$tr_class_array[]="currentrow";}
