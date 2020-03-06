@@ -82,7 +82,7 @@
    // fields
    $form->addField("text","name",api_text("cDevicesCategory-property-name"),$this->name,api_text("cDevicesCategory-placeholder-name"),null,null,null,"required");
    $form->addField("text","title",api_text("cDevicesCategory-property-title"),$this->title,api_text("cDevicesCategory-placeholder-title"));
-   $form->addField("text","icon",api_text("cDevicesCategory-property-icon"),$this->icon,null,null,null,null,"required");
+   $form->addField("text","icon",api_text("cDevicesCategory-property-icon"),$this->icon,null,null,null,null,"required autocomplete='off'");
    // controls
    $form->addControl("submit",api_text("form-fc-submit"));
    // return

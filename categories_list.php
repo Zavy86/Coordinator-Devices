@@ -45,10 +45,12 @@
   // additional controls
   $form->addControl("button",api_text("form-fc-cancel"),"#",null,null,null,"data-dismiss='modal'");
   if($selected_category_obj->id){
-   if(1){
+   if(!count($selected_category_obj->getDevices())){
     $form->addControl("button",api_text("form-fc-remove"),api_url(["scr"=>"controller","act"=>"remove","obj"=>"cDevicesCategory","idCategory"=>$selected_category_obj->id]),"btn-danger",api_text("cDevicesCategory-confirm-remove"));
    }
   }
+  // form scripts
+  $app->addScript("/* Font Awesome Icon Picker */\n$(function(){\$(\"#form_devices_category_edit_form_input_icon\").iconpicker();});");
   // build modal
   $modal=new strModal(api_text("categories_list-modal-title-".($selected_category_obj->id?"edit":"add")),null,"categories_list-category");
   $modal->setBody($form->render(1));
