@@ -53,7 +53,7 @@
    $table->addRowField($document_fobj->name,"truncate-ellipsis");
   }
   // build modal
-  $modal=new strModal(api_text("devices_view-documents-modal-title-add",api_tag("samp",$device_obj->code)),null,"devices_view-document");
+  $modal=new strModal(api_text("devices_view-documents-modal-title-add",api_tag("samp",$device_obj->name)),null,"devices_view-document");
   //$modal->setBody($form->render());
   $modal->setBody($searchbar->render()."<br>".$table->render());
   // add modal to application
