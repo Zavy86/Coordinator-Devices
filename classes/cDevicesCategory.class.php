@@ -24,6 +24,20 @@
   protected $icon;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->name))){throw new Exception("Category name is mandatory..");}
+   if(!strlen(trim($this->icon))){throw new Exception("Category icon is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Get Label
    *
    * @param boolean $icon Show icon
@@ -57,20 +71,6 @@
   public function getDevices(){return cDevicesDevice::availables(true,["fkCategory"=>$this->id]);}
 
   /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->name))){throw new Exception("Category name is mandatory..");}
-   if(!strlen(trim($this->icon))){throw new Exception("Category icon is mandatory..");}
-   // return
-   return true;
-  }
-
-  /**
    * Edit form
    *
    * @param string[] $additional_parameters Array of url additional parameters
@@ -82,7 +82,7 @@
    // fields
    $form->addField("text","name",api_text("cDevicesCategory-property-name"),$this->name,api_text("cDevicesCategory-placeholder-name"),null,null,null,"required");
    $form->addField("text","title",api_text("cDevicesCategory-property-title"),$this->title,api_text("cDevicesCategory-placeholder-title"));
-   $form->addField("text","icon",api_text("cDevicesCategory-property-icon"),$this->icon,null,null,null,null,"required");
+   $form->addField("text","icon",api_text("cDevicesCategory-property-icon"),$this->icon,null,null,null,null,"required autocomplete='off'");
    // controls
    $form->addControl("submit",api_text("form-fc-submit"));
    // return

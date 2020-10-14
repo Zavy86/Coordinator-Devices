@@ -30,6 +30,20 @@
   protected $warranty;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->fkCategory))){throw new Exception("Device category key is mandatory..");}
+   if(!strlen(trim($this->name))){throw new Exception("Device name is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Decode log properties
    *
    * {@inheritdoc}
@@ -38,7 +52,7 @@
    // make return array
    $return_array=array();
    // join events
-   if($properties['class']=="cArchiveDocument"){$return_array[]=api_text($properties['class']).": ".(new cArchiveDocument($properties['id']))->name;}
+   if($properties['_obj']=="cArchiveDocument"){$return_array[]=api_text($properties['_obj']).": ".(new cArchiveDocument($properties['_id']))->name;}
    // return
    return implode(" | ",$return_array);
   }
@@ -81,20 +95,6 @@
    $form->addControl("submit",api_text("form-fc-submit"));
    // return
    return $form;
-  }
-
-  /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->fkCategory))){throw new Exception("Device category key is mandatory..");}
-   if(!strlen(trim($this->name))){throw new Exception("Device name is mandatory..");}
-   // return
-   return true;
   }
 
   /**
