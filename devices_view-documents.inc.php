@@ -11,6 +11,8 @@
  $documents_table->addHeader("&nbsp;",null,16);
  $documents_table->addHeader(api_text("cArchiveDocument-property-id"),"nowrap");
  $documents_table->addHeader("&nbsp;",null,16);
+ $documents_table->addHeader(api_text("cArchiveDocument-property-fkRegistry"),"nowrap");
+ $documents_table->addHeader(api_text("cArchiveDocument-property-date"),"nowrap");
  $documents_table->addHeader(api_text("cArchiveDocument-property-name"),null,"100%");
  $documents_table->addHeader("&nbsp;",null,16);
  // cycle all documents
@@ -24,9 +26,11 @@
   if($document_fobj->id==$_REQUEST['idDocument']){$tr_class_array[]="currentrow";}
   // make project row
   $documents_table->addRow(implode(" ",$tr_class_array));
-  $documents_table->addRowFieldAction("#","fa-search",api_text("table-td-view"));
+  $documents_table->addRowFieldAction(api_url(["mod"=>"archive","scr"=>"documents_view","idDocument"=>$document_fobj->id]),"fa-search",api_text("table-td-view"),null,null,null,null,"_blank");
   $documents_table->addRowField(api_tag("samp",$document_fobj->id),"nowrap");
   $documents_table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-center");
+  $documents_table->addRowField($document_fobj->getRegistry()->name,"nowrap");
+  $documents_table->addRowField(api_date_format($document_fobj->date,api_text("date")),"nowrap");
   $documents_table->addRowField($document_fobj->name,"truncate-ellipsis");
   $documents_table->addRowField($ob->render(),"text-right");
  }
@@ -40,6 +44,8 @@
   $table->addHeaderAction(api_url(["mod"=>"archive","scr"=>"documents_edit"]),"fa-plus",api_text("table-td-add"));
   $table->addHeader(api_text("cArchiveDocument-property-id"),"nowrap");
   $table->addHeader("&nbsp;",null,16);
+  $table->addHeader(api_text("cArchiveDocument-property-fkRegistry"),"nowrap");
+  $table->addHeader(api_text("cArchiveDocument-property-date"),"nowrap");
   $table->addHeader(api_text("cArchiveDocument-property-name"),null,"100%");
   // make query where                                                                                                                          /** @todo molto migliorabile */
   $query_where="`id` LIKE '%".addslashes($_REQUEST["searchbar_query"])."%' OR `name` LIKE '%".addslashes($_REQUEST["searchbar_query"])."%'";
@@ -50,10 +56,13 @@
    $table->addRowFieldAction(api_url(["mod"=>"devices","scr"=>"controller","act"=>"document_add","obj"=>"cDevicesDevice","idDevice"=>$device_obj->id,"idDocument"=>$document_fobj->id,"return"=>["scr"=>"devices_view","tab"=>"documents"]]),"fa-plus",api_text("table-td-add"));
    $table->addRowField(api_tag("samp",$document_fobj->id),"nowrap");
    $table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-center");
+   $table->addRowField($document_fobj->getRegistry()->name,"nowrap");
+   $table->addRowField(api_date_format($document_fobj->date,api_text("date")),"nowrap");
    $table->addRowField($document_fobj->name,"truncate-ellipsis");
   }
   // build modal
   $modal=new strModal(api_text("devices_view-documents-modal-title-add",api_tag("samp",$device_obj->name)),null,"devices_view-document");
+  $modal->setSize("large");
   //$modal->setBody($form->render());
   $modal->setBody($searchbar->render()."<br>".$table->render());
   // add modal to application
