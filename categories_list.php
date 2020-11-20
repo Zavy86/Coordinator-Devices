@@ -18,7 +18,8 @@
  $table->addHeader("&nbsp;",null,16);
  $table->addHeader(api_text("cDevicesCategory-property-name"),"nowrap");
  $table->addHeader(api_text("cDevicesCategory-property-title"),null,"100%");
- $table->addHeaderAction(api_url(["scr"=>"categories_list","act"=>"category_add"]),"fa-plus",api_text("categories_list-td-add"),null,"text-right");
+ if(!api_checkAuthorization("devices-manage")){$table->addHeader("&nbsp;",null,16);}
+ else{$table->addHeaderAction(api_url(["scr"=>"categories_list","act"=>"category_add"]),"fa-plus",api_text("categories_list-td-add"),null,"text-right");}
  // cycle all categories
  foreach(cDevicesCategory::availables(true) as $category_fobj){
   // build operation button

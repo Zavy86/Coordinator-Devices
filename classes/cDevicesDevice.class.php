@@ -88,7 +88,7 @@
    $form->addField("text","brand",api_text("cDevicesDevice-property-brand"),$this->brand,api_text("cDevicesDevice-placeholder-brand"));
    $form->addField("text","model",api_text("cDevicesDevice-property-model"),$this->model,api_text("cDevicesDevice-placeholder-model"));
    $form->addField("text","identifier",api_text("cDevicesDevice-property-identifier"),$this->identifier,api_text("cDevicesDevice-placeholder-identifier"));
-   $form->addField("number","price",api_text("cDevicesDevice-property-price"),$this->price,api_text("cDevicesDevice-placeholder-price"));
+   $form->addField("number","price",api_text("cDevicesDevice-property-price"),$this->price,api_text("cDevicesDevice-placeholder-price"),null,null,null,"step='0.01'");
    $form->addField("date","purchase",api_text("cDevicesDevice-property-purchase"),$this->purchase);
    $form->addField("date","warranty",api_text("cDevicesDevice-property-warranty"),$this->warranty);
    // controls
